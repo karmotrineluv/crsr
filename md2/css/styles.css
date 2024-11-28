@@ -1,0 +1,79 @@
+/* Base styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.box {
+    position: relative;
+    border: 1px solid black;
+    padding: 50px 20px 20px; /* Increased top padding to prevent overlap */
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Grayish background */
+    margin: 10px;
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #e0f7fa; /* Default background color */
+    color: black;  /* Set font color to black */
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 1.25em;
+}
+
+/* Unique background colors for each section title */
+#chicken .section-title {
+    background-color: #d59898; /* Orange for Chicken */
+}
+
+#beef .section-title {
+    background-color: #c14543; /* Red for Beef */
+}
+
+#sushi .section-title {
+    background-color: #e5d198; /* Green for Sushi */
+}
+
+
+/* Media Queries for responsive design */
+
+/* Desktop (≥992px) */
+@media (min-width: 992px) {
+    .box {
+        width: calc(33.33% - 20px); /* 3 boxes per row */
+    }
+}
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .box {
+        width: calc(50% - 20px); /* 2 boxes per row */
+    }
+    .box:nth-child(3) {
+        width: calc(100% - 20px); /* 3rd box takes full width */
+    }
+}
+
+/* Mobile (≤767px) */
+@media (max-width: 767px) {
+    .box {
+        width: calc(100% - 20px); /* Each box takes full width */
+    }
+}
